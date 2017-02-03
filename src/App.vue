@@ -1,28 +1,134 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <div>
+      <md-layout md-gutter class="margin-top-20">
+        <md-layout md-align="center">
+          <md-column md-align="center">
+            <md-layout class="width-fix inline">
+              <a href="#">drie</a>
+              <span class="fr">
+                <a href="#">docs</a>
+                |
+                <a href="#">support</a>
+                |
+                <md-menu>
+                  <a href="#" md-menu-trigger>ben@ACME</a>
+
+                  <md-menu-content>
+                    <md-menu-item>Item 1</md-menu-item>
+                    <md-menu-item>Logout</md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </span>
+            </md-layout>
+
+            <md-list class="width-fix">
+              <md-list-item>
+                <md-switch class="md-primary" v-model="check1"></md-switch>
+                <span><a href="#">martin-drie-signup-flow</a></span>
+                <md-icon></md-icon>
+              </md-list-item>
+
+              <md-list-item >
+                <md-switch class="md-primary" v-model="check2"></md-switch>
+                <span><a href="#">martin-drie-signup-flow</a></span>
+
+                <md-list-expand>
+                  <md-list>
+                    <md-list-item class="md-inset">Some content</md-list-item>
+                  </md-list>
+                </md-list-expand>
+
+              </md-list-item>
+
+              <md-list-item class="md-active">
+                <md-switch class="md-primary" v-model="check3"></md-switch>
+                <span><a href="#">demo-starter-app</a></span>
+
+                <md-list-expand>
+                  <md-list>
+                    <md-list-item class="md-inset">
+
+                      <table class="full-width">
+                        <tr>
+                          <td><a href="#">master</a></td>
+                          <td><a href="#">visit</a></td>
+                          <td>2 instances</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">todays-news</a></td>
+                          <td><a href="#">visit</a></td>
+                          <td>on demand</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">feature-make-app-more-simple</a></td>
+                          <td><a href="#">visit</a></td>
+                          <td>on demand</td>
+                        </tr>
+                      </table>
+
+                    </md-list-item>
+                  </md-list>
+                </md-list-expand>
+
+              </md-list-item>
+
+
+              <md-list-item>
+                <md-switch class="md-primary" v-model="check4"></md-switch>
+                <span><a href="#">demo-rails-postgres</a></span>
+
+                <md-list-expand>
+                  <md-list>
+                    <md-list-item class="md-inset">Some content</md-list-item>
+                  </md-list>
+                </md-list-expand>
+
+              </md-list-item>
+
+            </md-list>
+
+
+          </md-column>
+
+        </md-layout>
+      </md-layout>
+    </div>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+  export default {
+    name: 'app',
+    data () {
+      return {
+        check1: false,
+        check2: true,
+        check3: true,
+        check4: false
+      }
+    }
 
-export default {
-  name: 'app',
-  components: {
-    Hello
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .margin-top-20{
+    margin-top: 20px;
+  }
+  .width-fix {
+    width: 700px
+  }
+
+  .full-width {
+    width:100%;
+  }
+  .fr {
+    float: right;
+  }
+
+  .inline {
+    display: inline;
+  }
+
 </style>
